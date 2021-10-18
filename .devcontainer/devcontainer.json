@@ -1,0 +1,11 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.194.3/containers/alpine
+{
+	"name": "SAST-Demo",
+	"build": {
+		"dockerfile": "Dockerfile",
+	},
+	// Add the IDs of extensions you want installed when the container is created.
+	// Note that some extensions may not work in Alpine Linux. See https://aka.ms/vscode-remote/linux.
+	"extensions": ["ms-cst-e.vscode-devskim@0.4.252"],
+}

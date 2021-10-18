@@ -3,3 +3,4 @@
 __pycache__
 *.sqlite
 node_modules
+.comp4035/tools/dependency-check/data/

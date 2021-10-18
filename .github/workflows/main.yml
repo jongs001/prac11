@@ -31,6 +31,14 @@ jobs:
       with:
         distribution: 'temurin'
         java-version: '11'
+    #New-------------------------------------------------------
+    - uses: actions/checkout@v2
+    - uses: microsoft/DevSkim-Action@v1
+    - uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: devskim-results.sarif
+
+    #----------------------------------------------------------
     # Install node packages
     - run: npm ci
     # Add commands below to run SAST tests
@@ -39,6 +47,8 @@ jobs:
     # - '-s .' scans the current directory for a supported package list
     # - '-o .comp4035/output' sets the location of the scan output file
     - run: .comp4035/tools/dependency-check/bin/dependency-check.sh -s . -o .comp4035/output
+    #---------------------------------------------------------------------------------------------------New
+    - run: devskim analyze .
     # DevSkim
     # - Some CI support inbuilt tasks and scans, for  ease of use
     # - We could install and run DevSkim directly, but we can do it more easily using the DevSkim action

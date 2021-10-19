@@ -59,12 +59,16 @@ jobs:
         should-scan-archives: false
         output-filename: devskim-results.sarif
         output-directory: .comp4035/output
-
-
-    - uses: actions/upload-artifact@v2
+        
+    - name: Upload DevSkim results to Security tab
+      uses: github/codeql-action/upload-sarif@v1
       with:
-        name: devskim-report
-        path: .comp4035/output/devskim-results.sarif
+          sarif_file: devskim-results.sarif
+          
+#     - uses: actions/upload-artifact@v2
+#       with:
+#         name: devskim-report
+#         path: .comp4035/output/devskim-results.sarif
 
     # - name: Archive dependency results
     #     uses: actions/upload-artifact@v2

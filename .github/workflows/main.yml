@@ -63,7 +63,12 @@ jobs:
     - name: Upload DevSkim results to Security tab
       uses: github/codeql-action/upload-sarif@v1
       with:
-          sarif_file: devskim-results.sarif
+          sarif_file: .comp4035/output/devskim-results.sarif
+          
+    - name: Upload dependency-check results to Security tab
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+          sarif_file: .comp4035/output/dependency-check-report.html
           
 #     - uses: actions/upload-artifact@v2
 #       with:

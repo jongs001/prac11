@@ -65,21 +65,20 @@ jobs:
       with:
           sarif_file: .comp4035/output/devskim-results.sarif
           
-    - name: Upload dependency-check results to Security tab
-      uses: github/codeql-action/upload-sarif@v1
-      with:
-          sarif_file: .comp4035/output/dependency-check-report.html
+#     - name: Upload dependency-check results to Security tab
+#       uses: github/codeql-action/upload-sarif@v1
+#       with:
+#           sarif_file: .comp4035/output/dependency-check-report.html
           
 #     - uses: actions/upload-artifact@v2
 #       with:
 #         name: devskim-report
 #         path: .comp4035/output/devskim-results.sarif
 
-    # - name: Archive dependency results
-    #     uses: actions/upload-artifact@v2
-    #     with:
-    #       name: dependency-report
-    #       path: .comp4035/output/devskim-results.sarif
+    - uses: actions/upload-artifact@v2
+      with:
+          name: dependency-report
+          path: .comp4035/output/dependency-check-report.html
 
   # Deploy the app
   deploy:

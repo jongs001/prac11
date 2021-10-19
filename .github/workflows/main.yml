@@ -60,11 +60,11 @@ jobs:
         output-filename: devskim-results.sarif
         output-directory: .comp4035/output
 
-    - name: Archive devskim results
-        uses: actions/upload-artifact@v2
-        with:
-          name: devskim-report
-          path: .comp4035/output/devskim-results.sarif
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: devskim-report
+        path: .comp4035/output/devskim-results.sarif
 
     # - name: Archive dependency results
     #     uses: actions/upload-artifact@v2
